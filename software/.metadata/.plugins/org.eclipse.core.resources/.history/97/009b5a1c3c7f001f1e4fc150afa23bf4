@@ -1,0 +1,43 @@
+/*
+ * "Hello World" example.
+ *
+ * This example prints 'Hello from Nios II' to the STDOUT stream. It runs on
+ * the Nios II 'standard', 'full_featured', 'fast', and 'low_cost' example
+ * designs. It runs with or without the MicroC/OS-II RTOS and requires a STDOUT
+ * device in your system's hardware.
+ * The memory footprint of this hosted application is ~69 kbytes by default
+ * using the standard reference design.
+ *
+ * For a reduced footprint version of this template, and an explanation of how
+ * to reduce the memory footprint for a given application, see the
+ * "small_hello_world" template.
+ *
+ */
+
+#include <stdio.h>
+#include "system.h"
+
+int background();
+
+int main()
+{
+  while (1) {
+	  background();
+  }
+
+  return 0;
+}
+
+int background()
+{
+int j;
+int x = 0;
+int grainsize = 4;
+int g_taskProcessed = 0;
+
+for(j = 0; j < grainsize; j++)
+	{
+		g_taskProcessed++;
+	}
+	return x;
+}

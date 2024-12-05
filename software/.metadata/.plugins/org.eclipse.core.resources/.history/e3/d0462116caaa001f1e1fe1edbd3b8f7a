@@ -1,0 +1,47 @@
+/*=========================================================================*/
+/*  Includes                                                               */
+/*=========================================================================*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdint.h>
+
+#include <system.h>
+#include <sys/alt_alarm.h>
+#include <io.h>
+
+#include "alt_types.h"
+#include "altera_up_avalon_audio.h"
+
+#include <altera_up_avalon_audio.h>
+#include <altera_up_avalon_audio_and_video_config.h>
+#include "diskio.h"
+#include "fatfs.h"
+#include "ff.h"
+#include "monitor.h"
+#include "uart.h"
+
+int isWav(char * filename);
+
+int isWav(char * filename) {
+	char * suff = ".wav";
+	int str_len = strlen(filename);
+	int suff_len = strlen(suff);
+
+	if (suff_len > str_len) {
+		return 0;
+	}
+
+	if (strcmp(filename + str_len - suff_len, suff) == 0) {
+		return 1;
+	}
+	return 0;
+}
+int main()
+{
+	FATFS Fatfs;
+    disk_initialize(0);
+    f_mount(0, &Fatfs[0]);
+
+  return 0;
+}

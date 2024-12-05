@@ -1,0 +1,6 @@
+09:39:17 **** Clean-only build of configuration Nios II for project Lab2_CLI ****
+make clean 
+[Lab2_CLI clean complete]
+
+09:39:17 Build Finished (took 204ms)
+
